@@ -8,7 +8,7 @@
 
 ### Why did we build this project?
 
-- I built this project to showcase my ability to use codittional logic with javascript. Using conditional statements to build a password generator wa a great opportunity to be creative in how we approached the job and met requirements.
+- I built this project to showcase my ability to use conditional logic with javascript. Using conditional statements to build a password generator was a great opportunity to be creative in how we approached the job and met requirements.
 
 ### What did we learn? 
 
