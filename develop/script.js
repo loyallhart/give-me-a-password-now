@@ -8,27 +8,30 @@ function generatePassword() {
  let includeUpperCase;
  let includeNumeric;
  let includeSpecial;
+ // set character range between 8 and 128 and window prompts for additional password criteria 
   if (userInput >= 8 && userInput <= 128) {
     includeLowerCase =  window.confirm ("Confirm if your password can include lowercase characters");
     includeUpperCase = window.confirm ("Confirm if your password can include include uppercase characters");
     includeNumeric = window.confirm ("Confirm if your password can includeinclude numeric characters");
     includeSpecial = window.confirm ("Confirm if your password can include include special characters");
   } 
+  // if the user's input is outside of the set range then application will reset
   else {
     window.alert ("Please select a number between 8 and 128");
     return;
   }
-
+// Logical AND operator to ensure that at least one character type is selected for the password generator
   if (!includeLowerCase && !includeUpperCase && !includeNumeric && !includeSpecial) {
     window.alert("You must choose atleast one character type")};
 
+// assign variables for character arrays
     let userConfirm = [];
     let lowerCase = ["a", "b", "c"];
     let upperCase = ["A", "B", "C"];
     let numeric = ["1", "2", "3"];
     let specialCharacter = ["!", "@" ,"#"];
 
-
+// use .concat to merge the arrays for character types selected by users into a new array
     if (includeLowerCase === true){
       userConfirm = userConfirm.concat(lowerCase);
     }
@@ -45,6 +48,7 @@ function generatePassword() {
       userConfirm = userConfirm.concat(specialCharacter);
     }
 
+  // for loop to use the number of characters selected by the user
     let pw = [];
 
     for (let i =0; i < userInput; i++) {
@@ -52,6 +56,8 @@ function generatePassword() {
       pw.push(pwGenerated);
 
     }
+
+  // convert the characters selected to a string to be written on the page
 
     let  convertedPw = pw.join("");
     return convertedPw
